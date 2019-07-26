@@ -16,7 +16,7 @@ namespace FarmaciaMysql
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Frmproductos());
+            Application.Run(new Form1());
         }
     }
 }

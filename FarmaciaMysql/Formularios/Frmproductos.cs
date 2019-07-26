@@ -36,7 +36,8 @@ namespace FarmaciaMysql
             textBox5.Text = "";
             label8.Text = "";
             comboBox1.Text = "";
-          textBox6.Text = "";
+            label9.Text = "";
+            dateTimePicker1.Text = "";
         }
         void cargaproveedor()
         {
@@ -80,34 +81,47 @@ namespace FarmaciaMysql
                 textBox4.Text = row.Cells["precio_venta"].Value.ToString();
                 textBox5.Text = row.Cells["stock"].Value.ToString();
                 label8.Text = row.Cells["proveedor"].Value.ToString();
-                textBox6.Text = row.Cells["Fecha_vencimiento"].Value.ToString();
+               label9.Text = row.Cells["Fecha_vencimiento"].Value.ToString();
+                date = Convert.ToDateTime(row.Cells["Fecha_vencimiento"].Value.ToString());
+                label9.Text = Convert.ToString(date.ToString("yyyy-MM-dd"));
+
+                // dateTimePicker1.Text=""
 
             }
         }
 
         private void Button2_Click(object sender, EventArgs e)
         {
-            String query = "insert into producto values('" + textBox1.Text + "','" + this.textBox2.Text + "','" + textBox3.Text + "','" + textBox4.Text + "','"+textBox5.Text+"','"+label8.Text+"','"+( textBox6.Text) + "')";
-            MySqlCommand cm = new MySqlCommand(query, cn.obtenerConeccion());
-            MySqlDataReader dr;
-            try
+            if (comboBox1.Text == "")
             {
-                dr = cm.ExecuteReader();
-                MessageBox.Show("Datos Guardados Corectamente", "Sistema", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Selecciona el proveedor por favor", "Sistema");
+                comboBox1.Text = "";
+            }
+            else
+            {
+                String query = "insert into producto values('" + textBox1.Text + "','" + this.textBox2.Text + "','" + textBox3.Text + "','" + textBox4.Text + "','" + textBox5.Text + "','" + label8.Text + "','" + (label9.Text) + "')";
+                MySqlCommand cm = new MySqlCommand(query, cn.obtenerConeccion());
+                MySqlDataReader dr;
+                try
+                {
+                    dr = cm.ExecuteReader();
+                    MessageBox.Show("Datos Guardados Corectamente", "Sistema", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
 
-                carga();
-                limpiar();
-                Button2.Enabled = true;
+                    carga();
+                    limpiar();
+                    Button2.Enabled = true;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+                finally
+                {
+                    cn.DescargarConexion();
+                }
             }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-            finally
-            {
-                cn.DescargarConexion();
-            }
+            
         }
 
         private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
@@ -145,7 +159,7 @@ namespace FarmaciaMysql
 
         private void Button3_Click(object sender, EventArgs e)
         {
-            string update = "update producto set Nombre='" + this.textBox2.Text + "' ,precio_venta='" + textBox3.Text + "',precio_compra='" + textBox4.Text + "',stock='"+textBox5.Text+"',proveedor='"+label8.Text+"',Fecha_vencimiento='"+textBox6.Text+"' where idproducto='" + this.textBox1.Text + "'";
+            string update = "update producto set Nombre='" + this.textBox2.Text + "' ,precio_venta='" + textBox3.Text + "',precio_compra='" + textBox4.Text + "',stock='"+textBox5.Text+"',proveedor='"+label8.Text+"',Fecha_vencimiento='"+label9.Text+"' where idproducto='" + this.textBox1.Text + "'";
             MySqlCommand cm = new MySqlCommand(update, cn.obtenerConeccion());
             MySqlDataReader dr;
             try
@@ -169,6 +183,17 @@ namespace FarmaciaMysql
         }
 
         private void textBox5_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dateTimePicker1_ValueChanged_1(object sender, EventArgs e)
+        {
+            date = Convert.ToDateTime(dateTimePicker1.Text);
+            label9.Text = Convert.ToString(date.ToString("yyyy-MM-dd"));
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }

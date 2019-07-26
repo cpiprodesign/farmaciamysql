@@ -7,12 +7,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using FarmaciaMysql.Conexion;
 using MySql.Data.MySqlClient;
 namespace FarmaciaMysql
 {
     public partial class Form1 : Form
     {
-        public MySqlConnection cn = new MySqlConnection("Server=localhost;Database=farmamysql; Uid=root;Pwd=;");
+        //public MySqlConnection cn = new MySqlConnection("Server=localhost;Database=farmamysql; Uid=root;Pwd=;");
+        conexion cn = new conexion();
         public Form1()
         {
             InitializeComponent();
@@ -36,9 +38,9 @@ namespace FarmaciaMysql
 
                 usuario = this.UsernameTextBox.Text;
                 pass = this.PasswordTextBox.Text;
-               MySqlCommand cm = new MySqlCommand("select*from usuario where usuario='"+ usuario +"'and password ='"+ pass +"'",cn);
+               MySqlCommand cm = new MySqlCommand("select*from usuario where usuario='"+ usuario +"'and password ='"+ pass +"'",cn.obtenerConeccion());
                 MySqlDataReader dr;
-                cn.Open();
+                cn.obtenerConeccion();
                 dr = cm.ExecuteReader();
               
 
@@ -54,7 +56,7 @@ namespace FarmaciaMysql
                     MessageBox.Show("Bienvenido  " + "Usuario " + "=>" + usu, "SystFarma 2019", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     MDIParent1 f = new MDIParent1();
                     f.Show();
-                    cn.Close();
+                    cn.DescargarConexion();
                     this.Hide();
                 }
                 else
@@ -63,7 +65,7 @@ namespace FarmaciaMysql
                     UsernameTextBox.Text = "";
                     PasswordTextBox.Text = "";
                     UsernameTextBox.Focus();
-                    cn.Close();
+                    cn.DescargarConexion();
                 }
 
             }
@@ -101,6 +103,11 @@ namespace FarmaciaMysql
             {
                 ingresar();
             }
+        }
+
+        private void Cancel_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }

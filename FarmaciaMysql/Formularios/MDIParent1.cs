@@ -95,6 +95,30 @@ namespace FarmaciaMysql
             FrmProveedor c = new FrmProveedor();
             c.ShowDialog();
         }
+
+        private void productoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Frmproductos c = new Frmproductos();
+            c.ShowDialog();
+        }
+
+        private void ventasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmVentas f = new FrmVentas();
+            f.ShowDialog();
+        }
+
+        private void ventasToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            FrmConsultaVentas f = new FrmConsultaVentas();
+            f.ShowDialog();
+        }
+
+        private void productosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmConsultaProductos f = new FrmConsultaProductos();
+            f.ShowDialog();
+        }
     }
     
 }

@@ -119,6 +119,7 @@
             this.Cancel.TabIndex = 39;
             this.Cancel.Text = "&Cancelar";
             this.Cancel.UseVisualStyleBackColor = false;
+            this.Cancel.Click += new System.EventHandler(this.Cancel_Click);
             // 
             // PasswordTextBox
             // 
