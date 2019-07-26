@@ -89,5 +89,12 @@ namespace FarmaciaMysql
             Frmcliente c = new Frmcliente();
             c.ShowDialog();
         }
+
+        private void proveedorToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmProveedor c = new FrmProveedor();
+            c.ShowDialog();
+        }
     }
+    
 }

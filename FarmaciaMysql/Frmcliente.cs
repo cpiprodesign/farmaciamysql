@@ -38,8 +38,7 @@ namespace FarmaciaMysql
 
 
                 carga();
-                textBox1.Text = "";
-                textBox2.Text = "";
+                limpiar();
                 Button2.Enabled = true;
             }
             catch (Exception ex)

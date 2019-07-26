@@ -78,6 +78,18 @@
     <Compile Include="Frmcliente.Designer.cs">
       <DependentUpon>Frmcliente.cs</DependentUpon>
     </Compile>
+    <Compile Include="Frmproductos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frmproductos.Designer.cs">
+      <DependentUpon>Frmproductos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmProveedor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmProveedor.Designer.cs">
+      <DependentUpon>FrmProveedor.cs</DependentUpon>
+    </Compile>
     <Compile Include="MDIParent1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -97,6 +109,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Frmcliente.resx">
       <DependentUpon>Frmcliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frmproductos.resx">
+      <DependentUpon>Frmproductos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmProveedor.resx">
+      <DependentUpon>FrmProveedor.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MDIParent1.resx">
       <DependentUpon>MDIParent1.cs</DependentUpon>
