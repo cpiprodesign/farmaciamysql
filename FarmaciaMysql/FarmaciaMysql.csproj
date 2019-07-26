@@ -72,11 +72,11 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="Frmcategoria.cs">
+    <Compile Include="Frmcliente.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Frmcategoria.Designer.cs">
-      <DependentUpon>Frmcategoria.cs</DependentUpon>
+    <Compile Include="Frmcliente.Designer.cs">
+      <DependentUpon>Frmcliente.cs</DependentUpon>
     </Compile>
     <Compile Include="MDIParent1.cs">
       <SubType>Form</SubType>
@@ -95,8 +95,8 @@
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Frmcategoria.resx">
-      <DependentUpon>Frmcategoria.cs</DependentUpon>
+    <EmbeddedResource Include="Frmcliente.resx">
+      <DependentUpon>Frmcliente.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MDIParent1.resx">
       <DependentUpon>MDIParent1.cs</DependentUpon>
