@@ -119,6 +119,19 @@ namespace FarmaciaMysql
             FrmConsultaProductos f = new FrmConsultaProductos();
             f.ShowDialog();
         }
+
+        private void optionsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmReporteProdcutos f = new FrmReporteProdcutos();
+            f.ShowDialog();
+
+        }
+
+        private void listadoDeClientesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmReporteClientes f = new FrmReporteClientes();
+            f.ShowDialog();
+        }
     }
     
 }
