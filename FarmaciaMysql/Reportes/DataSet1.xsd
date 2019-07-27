@@ -3,7 +3,9 @@
   <xs:annotation>
     <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
       <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
-        <Connections />
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="farmamysqlConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="farmamysqlConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.FarmaciaMysql.Properties.Settings.GlobalReference.Default.farmamysqlConnectionString" Provider="MySql.Data.MySqlClient" />
+        </Connections>
         <Tables />
         <Sources />
       </DataSource>
@@ -11,7 +13,16 @@
   </xs:annotation>
   <xs:element name="DataSet1" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DataSet1" msprop:Generator_UserDSName="DataSet1">
     <xs:complexType>
-      <xs:choice minOccurs="0" maxOccurs="unbounded" />
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="Producto" msprop:Generator_TableClassName="ProductoDataTable" msprop:Generator_TableVarName="tableProducto" msprop:Generator_TablePropName="Producto" msprop:Generator_RowDeletingName="ProductoRowDeleting" msprop:Generator_RowChangingName="ProductoRowChanging" msprop:Generator_RowEvHandlerName="ProductoRowChangeEventHandler" msprop:Generator_RowDeletedName="ProductoRowDeleted" msprop:Generator_UserTableName="Producto" msprop:Generator_RowChangedName="ProductoRowChanged" msprop:Generator_RowEvArgName="ProductoRowChangeEvent" msprop:Generator_RowClassName="ProductoRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="idproducto" msprop:Generator_ColumnVarNameInTable="columnidproducto" msprop:Generator_ColumnPropNameInRow="idproducto" msprop:Generator_ColumnPropNameInTable="idproductoColumn" msprop:Generator_UserColumnName="idproducto" type="xs:string" minOccurs="0" />
+              <xs:element name="nombre" msprop:Generator_ColumnVarNameInTable="columnnombre" msprop:Generator_ColumnPropNameInRow="nombre" msprop:Generator_ColumnPropNameInTable="nombreColumn" msprop:Generator_UserColumnName="nombre" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
     </xs:complexType>
   </xs:element>
 </xs:schema>
