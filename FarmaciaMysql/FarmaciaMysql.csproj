@@ -109,6 +109,16 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSet2.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Dsclientes.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Dsclientes.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DsInforme.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DsInforme.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -163,6 +173,12 @@
     <Compile Include="Formularios\MDIParent1.Designer.cs">
       <DependentUpon>MDIParent1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Frmlistarclientes1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frmlistarclientes1.Designer.cs">
+      <DependentUpon>Frmlistarclientes1.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmReporteClientes.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -213,6 +229,9 @@
     <EmbeddedResource Include="Formularios\MDIParent1.resx">
       <DependentUpon>MDIParent1.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Frmlistarclientes1.resx">
+      <DependentUpon>Frmlistarclientes1.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmReporteClientes.resx">
       <DependentUpon>FrmReporteClientes.cs</DependentUpon>
     </EmbeddedResource>
@@ -228,6 +247,9 @@
       <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="Report1.rdlc" />
+    <EmbeddedResource Include="Report2.rdlc" />
+    <EmbeddedResource Include="Report3.rdlc" />
+    <EmbeddedResource Include="Report4.rdlc" />
     <EmbeddedResource Include="Reportes\Report1.rdlc" />
     <EmbeddedResource Include="UserControl1.resx">
       <DependentUpon>UserControl1.cs</DependentUpon>
@@ -242,6 +264,28 @@
     </None>
     <None Include="DataSet2.xss">
       <DependentUpon>DataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="Dsclientes.xsc">
+      <DependentUpon>Dsclientes.xsd</DependentUpon>
+    </None>
+    <None Include="Dsclientes.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Dsclientes.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Dsclientes.xss">
+      <DependentUpon>Dsclientes.xsd</DependentUpon>
+    </None>
+    <None Include="DsInforme.xsc">
+      <DependentUpon>DsInforme.xsd</DependentUpon>
+    </None>
+    <None Include="DsInforme.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DsInforme.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DsInforme.xss">
+      <DependentUpon>DsInforme.xsd</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
